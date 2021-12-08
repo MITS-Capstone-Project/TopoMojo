@@ -752,16 +752,16 @@ namespace TopoMojo.Api.Services
             ctx.Gamespace.Challenge = JsonSerializer.Serialize(spec, jsonOptions);
 
             // handle completion if max attempts reached or full score
-            if (
-                spec.Score == 1 ||
-                (
-                    spec.MaxAttempts > 0 &&
-                    spec.Submissions.Count == spec.MaxAttempts
-                )
-            )
-            {
-                ctx.Gamespace.EndTime = ts;
-            }
+            // if (
+            //     spec.Score == 1 ||
+            //     (
+            //         spec.MaxAttempts > 0 &&
+            //         spec.Submissions.Count == spec.MaxAttempts
+            //     )
+            // )
+            // {
+            //     ctx.Gamespace.EndTime = ts;
+            // }
 
             await _store.Update(ctx.Gamespace);
 
